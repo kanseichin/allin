@@ -437,6 +437,6 @@ textarea::-ms-input-placeholder {color: #eee;}
 
 .news_cao{background: #fff; width: 100%; margin-top: 50rpx; display: inline-block;}
 .news_cao ._li{width: 33.33%; float: left; text-align: center; margin-bottom: 50rpx;}
-.news_cao ._li ._p{width: 100%; font-size: 26rpx; min-height: 60rpx; line-height: 60rpx;}
+.news_cao ._li ._p{width: 100%; font-size: 28rpx; min-height: 60rpx; line-height: 60rpx;}
 .news_cao ._li .ico1{display: inline-block; width: 100rpx; height: 100rpx;}
-.tools_p{width:100%; border-left: 6rpx solid #ffa622; height: 34rpx; line-height: 34rpx; padding-left: 10rpx;}
+.tools_p{width:100%; border-left: 6rpx solid #ffa622; height: 29rpx; line-height: 29rpx; padding-left: 10rpx; font-size: 30rpx; color: #999;}
