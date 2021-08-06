@@ -39,6 +39,10 @@
 						url: 'ico_sogou.png',
 						name: '搜狗',
 						tabnum: 4
+					}, {
+						url: 'ico_zhihu.png',
+						name: '知乎',
+						tabnum: 5
 					}]
 			}
 		},
