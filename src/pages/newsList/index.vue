@@ -16,6 +16,9 @@
 			<ul v-if="tab_num===5&&zhihu_hotNewsList && zhihu_hotNewsList.length > 1">
 				<li v-for="(list,index) in zhihu_hotNewsList" :key="index" @click="gotoDetail(list.word, 'zhihu')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
 			</ul>
+			<ul v-if="tab_num===6&&bilibili_hotNewsList && bilibili_hotNewsList.length > 1">
+				<li v-for="(list,index) in bilibili_hotNewsList" :key="index" @click="gotoDetail(list.url, 'bilibili')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
+			</ul>
 		</div>
 	</view>
 </template>
@@ -32,6 +35,7 @@
 				weibo_hotNewsList: [],
 				sogou_hotNewsList: [],
 				zhihu_hotNewsList: [],
+				bilibili_hotNewsList: [],
 				url: ''
 			}
 		},
@@ -81,6 +85,15 @@
 				})
 				.catch(e => { })
 			},
+			get_bilibiliHotNews() {
+				console.log('get_bilibiliHotNews')
+				ApiClient.Post('/app/hs/bilibili', {
+			}).then(e => {
+					this.tab_num = 6
+					this.bilibili_hotNewsList = e.data
+				})
+				.catch(e => { })
+			},
 			gotoDetail(word, urlheader) {
 				console.log('encode', encodeURIComponent(word))
 				var header = ''
@@ -105,6 +118,10 @@
 						header = 'https://www.zhihu.com/search?q='
 						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '&utm_content=search_hot&type=content') })
 						break;
+					case 'bilibili':
+						header = 'https://'
+						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word.slice(2) + '') })
+						break;
 				}
 			},
 		},
@@ -126,7 +143,13 @@
 				case '5':
 					this.get_zhihuHotNews()
 					break
+				case '6':
+					this.get_bilibiliHotNews()
+					break
 			}
+			wx.setNavigationBarTitle({
+				title: options.name  //修改title
+			})
 		}
 	});
 </script>
