@@ -19,6 +19,9 @@
 			<ul v-if="tab_num===6&&bilibili_hotNewsList && bilibili_hotNewsList.length > 1">
 				<li v-for="(list,index) in bilibili_hotNewsList" :key="index" @click="gotoDetail(list.url, 'bilibili')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
 			</ul>
+			<ul v-if="tab_num===7&&douyin_hotNewsList && douyin_hotNewsList.length > 1">
+				<li v-for="(list,index) in douyin_hotNewsList" :key="index" @click="gotoDetail(list.word, 'douyin')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
+			</ul>
 		</div>
 	</view>
 </template>
@@ -36,6 +39,7 @@
 				sogou_hotNewsList: [],
 				zhihu_hotNewsList: [],
 				bilibili_hotNewsList: [],
+				douyin_hotNewsList: [],
 				url: ''
 			}
 		},
@@ -94,6 +98,15 @@
 				})
 				.catch(e => { })
 			},
+			get_douyinHotNews() {
+				console.log('get_douyinHotNews')
+				ApiClient.Post('/app/hs/douyin', {
+			}).then(e => {
+					this.tab_num = 7
+					this.douyin_hotNewsList = e.data
+				})
+				.catch(e => { })
+			},
 			gotoDetail(word, urlheader) {
 				console.log('encode', encodeURIComponent(word))
 				var header = ''
@@ -122,6 +135,10 @@
 						header = 'https://'
 						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word.slice(2) + '') })
 						break;
+					case 'douyin':
+						header = 'https://www.douyin.com/search/'
+						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
+						break;
 				}
 			},
 		},
@@ -145,6 +162,9 @@
 					break
 				case '6':
 					this.get_bilibiliHotNews()
+					break
+				case '7':
+					this.get_douyinHotNews()
 					break
 			}
 			wx.setNavigationBarTitle({

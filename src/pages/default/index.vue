@@ -4,7 +4,7 @@
 		<ul class="news_cao">
 			<li v-for="(item,index) in newslist" :key="index" @click="gotoNews(item.tabnum, item.name)">
 				<image class="ico1" :src="'/static/' + item.url"></image>
-				<p>{{item.name}}热搜</p>
+				<p>{{item.name}}</p>
 			</li>
 		</ul>
 		<p class="tools_p">即将上映</p>
@@ -56,6 +56,10 @@
 						url: 'ico_bilibili.png',
 						name: 'bilibili',
 						tabnum: 6
+					}, {
+						url: 'ico_douyin.png',
+						name: '抖音',
+						tabnum: 7
 					}],
 					movielist: [{
 						url: 'https://img9.doubanio.com/view/photo/l/public/p2674123936.webp',
