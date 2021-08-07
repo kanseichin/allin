@@ -323,7 +323,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 
 .checkbox{font-size: 13px;}
 
-.paddingLR30{padding: 0 30rpx;}
+.padding30{padding: 30rpx;}
 .margintop20{margin-top: 20rpx;}
 .content_team{width:100%;}
 .tip{height: 100rpx; line-height: 100rpx;}

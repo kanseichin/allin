@@ -1,5 +1,5 @@
 <template>
-	<view class="content_team paddingLR30">
+	<view class="content_team padding30">
 		<p class="tools_p">新闻热搜</p>
 		<ul class="news_cao">
 			<li v-for="(item,index) in newslist" :key="index" @click="gotoNews(item.tabnum, item.name)">
