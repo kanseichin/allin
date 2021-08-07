@@ -1,23 +1,8 @@
 <template>
-	<view class="content_team padding30">
-		<p class="tools_p">新闻热搜</p>
-		<ul class="news_cao">
-			<li v-for="(item,index) in newslist" :key="index" @click="gotoNews(item.tabnum, item.name)">
-				<image class="ico1" :src="'/static/' + item.url"></image>
-				<p>{{item.name}}</p>
-			</li>
-		</ul>
-		<p class="tools_p">即将上映</p>
-		<ul class="news_cao">
-			<li v-for="(item,index) in movielist" :key="index" @click="gotoDefault(item.palyUrl)">
-				<image class="ico1" :src="item.url"></image>
-				<p>{{item.name}}</p>
-				<p style="font-size:20rpx; color:#999; height:20rpx; line-height:20rpx; min-height:10rpx;">{{item.desc}}</p>
-			</li>
-		</ul>
-		<p class="tools_p">小霸王<a class="game_resave" @click="is_resaveinput=true">读档</a></p>
+    <view>
+        <p class="tools_p">小霸王<a class="game_resave" @click="is_resaveinput=true">读档</a></p>
 		<div v-if="is_resaveinput" class="game_resave_dialog">
-			<textarea type="text" placeholder="输入读档地址" class="resave_input" v-model="resaveinput" :focus="true"></textarea>
+			<input type="text" placeholder="输入读档地址" class="resave_input" v-model="resaveinput" />
 			<p>
 				<a @click="resaveGo">确定</a>
 				<a @click="is_resaveinput=false">取消</a>
@@ -30,61 +15,15 @@
 				<p style="font-size:20rpx; color:#999; height:20rpx; line-height:20rpx; min-height:10rpx;">{{item.desc}}</p>
 			</li>
 		</ul>
-	</view>
+    </view>
 </template>
 
 <script lang="ts">
-	import Vue from 'vue'
-	import ApiClient from '../../utils/apiclient'
+import ApiClient from '../../utils/apiclient'
 
-	export default Vue.extend({
+export default ({
 		data() {
 			return {
-				newslist: [{
-						url: 'ico_baidu.png',
-						name: '百度',
-						tabnum: 1
-					}, {
-						url: 'ico_toutiao.png',
-						name: '头条',
-						tabnum: 2
-					}, {
-						url: 'ico_weibo.png',
-						name: '微博',
-						tabnum: 3
-					}, {
-						url: 'ico_sogou.png',
-						name: '搜狗',
-						tabnum: 4
-					}, {
-						url: 'ico_zhihu.png',
-						name: '知乎',
-						tabnum: 5
-					}, {
-						url: 'ico_bilibili.png',
-						name: 'bilibili',
-						tabnum: 6
-					}, {
-						url: 'ico_douyin.png',
-						name: '抖音',
-						tabnum: 7
-					}],
-					movielist: [{
-						url: 'https://img9.doubanio.com/view/photo/l/public/p2674123936.webp',
-						name: '测谎人',
-						palyUrl: 'http://video.mtime.com/81118/?mid=270705',
-						desc: '2021-08-20(中国大陆)'
-					}, {
-						url: 'http://img5.mtime.cn/pi/2019/01/04/180800.55514141.jpg',
-						name: '皮皮虾总裁',
-						palyUrl: 'http://video.mtime.com/80510/?mid=259945',
-						desc: '2021-08-13(中国大陆)'
-					}, {
-						url: 'https://img2.doubanio.com/view/photo/l/public/p2560606153.webp',
-						name: '忠犬流浪记',
-						palyUrl: 'http://video.mtime.com/76184/?mid=264559',
-						desc: '2021-08-20(中国大陆)'
-					}],
 					gamelist: [{
 						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg7q33_QUojPmniQUwnwM4mgM.jpg',
 						name: '大航海时代2',
@@ -126,21 +65,15 @@
 			}
 		},
 		methods: {
-			gotoNews(tabnum, name) {
-				console.log('gotoNews', tabnum, name)
-				wx.navigateTo({ url: '/pages/newsList/index?tabnum=' + tabnum + '&name=' + name })
-			},
 			gotoDefault(palyUrl) {
 				console.log('gotoDefault', palyUrl)
 				wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(palyUrl) })
 			},
 			resaveGo() {
 				console.log('resaveGo', this.resaveinput)
-				if(this.resaveinput != '') {
-					wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(this.resaveinput) })
-					this.resaveinput = ''
-					this.is_resaveinput = false
-				}
+				wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(this.resaveinput) })
+				this.resaveinput = ''
+				this.is_resaveinput = false
 			}
 		},
 		onLoad() {
