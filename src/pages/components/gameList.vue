@@ -1,8 +1,8 @@
 <template>
     <view>
-        <p class="tools_p">小霸王<a class="game_resave" @click="is_resaveinput=true">读档</a></p>
+        <p class="tools_p">小霸王其乐无穷<a class="game_resave" @click="is_resaveinput=true">读档</a></p>
 		<div v-if="is_resaveinput" class="game_resave_dialog">
-			<input type="text" placeholder="输入读档地址" class="resave_input" v-model="resaveinput" />
+			<textarea type="text" placeholder="输入读档地址" class="resave_input" v-model="resaveinput" :focus="true"></textarea>
 			<p>
 				<a @click="resaveGo">确定</a>
 				<a @click="is_resaveinput=false">取消</a>
@@ -18,8 +18,7 @@
     </view>
 </template>
 
-<script lang="ts">
-import ApiClient from '../../utils/apiclient'
+<script>
 
 export default ({
 		data() {
@@ -28,6 +27,21 @@ export default ({
 						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg7q33_QUojPmniQUwnwM4mgM.jpg',
 						name: '大航海时代2',
 						palyUrl: 'http://www.return8090.com/mdWeb.html?fccpath=MDC.bin&gameid=dhhsd2',
+						desc: 'MD'
+					}, {
+						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg0Kv7_gUogrPPmgYw4QM4mgM.jpg',
+						name: '三国演义',
+						palyUrl: 'http://www.return8090.com/mdWeb.html?fccpath=MDC.bin&gameid=sgyy',
+						desc: 'MD'
+					}, {
+						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg9Kj0_QUou4vM5wcw0wM4mgM.jpg',
+						name: '吞食天地3',
+						palyUrl: 'http://www.return8090.com/mdWeb.html?fccpath=MDC.bin&gameid=tstd3',
+						desc: 'MD'
+					}, {
+						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg4Jj7_gUoja612QYw-gM4mgM.jpg',
+						name: '漫画地带',
+						palyUrl: 'http://www.return8090.com/mdWeb.html?fccpath=MDC.bin&gameid=mhdd',
 						desc: 'MD'
 					}, {
 						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg7Zag-AUo9NveHjCaAziaAw.jpg',
@@ -40,13 +54,23 @@ export default ({
 						palyUrl: 'http://www.return8090.com/FCweb3.html?fccpath=FCC.bin&gameid=cjml1',
 						desc: 'FC'
 					}, {
+						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAgx83_9QUomMqc8gMwmgM4mgM.jpg',
+						name: '坦克大战',
+						palyUrl: 'http://www.return8090.com/FCweb3.html?fccpath=FCC.bin&gameid=tkdz',
+						desc: 'FC'
+					}, {
 						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAglIv0-AUogMm93wYwvQM4mgM.jpg',
 						name: '星之卡比3',
 						palyUrl: 'http://www.return8090.com/FCweb4_1.html?fccpath=FCC.bin&gameid=xzkb3',
 						desc: 'SFC'
 					}, {
+						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAgm8W9_gUo3Om37AEwmgM4mgM.jpg',
+						name: '快打旋风ONE',
+						palyUrl: 'http://www.return8090.com/gbaWeb.html?fccpath=GBAC.bin&gameid=kdxfone',
+						desc: 'GBA'
+					}, {
 						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAgiOT2-QUohemNcDC5AziaAw.jpg',
-						name: '超级马里奥弹珠台',
+						name: '马里奥弹珠台',
 						palyUrl: 'http://www.return8090.com/gbaWeb.html?fccpath=GBAC.bin&gameid=cjmladzt',
 						desc: 'GBA'
 					}, {
@@ -58,6 +82,16 @@ export default ({
 						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg2LXW_gUojPOTuQMwggQ4mgM.jpg',
 						name: '恐龙世界',
 						palyUrl: 'http://www.return8090.com/mameWeb.html?fccpath=MAMEC.bin&gameid=dino',
+						desc: '街机'
+					}, {
+						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAgnpLj_gUoiP_0vAIwgAQ4mgM.jpg',
+						name: '西游释厄传',
+						palyUrl: 'http://www.return8090.com/mameWeb.html?fccpath=MAMEC.bin&gameid=oldsplus',
+						desc: '街机'
+					}, {
+						url: 'https://20889800.s21i.faiusr.com/2/ABUIABACGAAg0aSM_wUoqZjKAjDcAziaAw.jpg',
+						name: '合金弹头',
+						palyUrl: 'http://www.return8090.com/mameWeb.html?fccpath=MAMEC.bin&gameid=mslug',
 						desc: '街机'
 					}],
 					is_resaveinput: false,
@@ -71,9 +105,11 @@ export default ({
 			},
 			resaveGo() {
 				console.log('resaveGo', this.resaveinput)
-				wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(this.resaveinput) })
-				this.resaveinput = ''
-				this.is_resaveinput = false
+				if(this.resaveinput != '') {
+					wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(this.resaveinput) })
+					this.resaveinput = ''
+					this.is_resaveinput = false
+				}
 			}
 		},
 		onLoad() {
