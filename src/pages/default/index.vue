@@ -7,6 +7,7 @@
 				<p>{{item.name}}</p>
 			</li>
 		</ul>
+		<cctv-list ref="CctvList"></cctv-list>
 		<movie-list ref="MovieList"></movie-list>
 		<game-list ref="GameList"></game-list>
 	</view>
@@ -15,13 +16,15 @@
 <script>
 	import Vue from 'vue'
 	import ApiClient from '../../utils/apiclient'
+	import CctvList from '../components/cctvList.vue';
 	import GameList from '../components/gameList.vue'
 	import MovieList from '../components/movieList.vue'
 
 	export default Vue.extend({
   		components: {
-			  GameList,
-			  MovieList
+				GameList,
+				MovieList,
+				CctvList
 			},
 		data() {
 			return {
