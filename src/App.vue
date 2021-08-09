@@ -13,5 +13,5 @@
 </script>
 
 <style>
-@import './style/common.css';
+@import './style/common_h5.css';
 </style>
