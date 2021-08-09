@@ -46,7 +46,7 @@
 		methods: {
 			get_BaiduHotNews() {
 				console.log('get_BaiduHotNews')
-				ApiClient.Post('/app/hs/baidu', {
+				ApiClient.Post('/HSBaseWeb/hs/baidu', {
 			}).then(e => {
 					this.tab_num = 1
 					this.baidu_hotNewsList = e.data
@@ -55,7 +55,7 @@
 			},
 			get_toutiaoHotNews() {
 				console.log('get_toutiaoHotNews')
-				ApiClient.Post('/app/hs/toutiao', {
+				ApiClient.Post('/HSBaseWeb/hs/toutiao', {
 			}).then(e => {
 					this.tab_num = 2
 					this.toutiao_hotNewsList = e.data
@@ -64,7 +64,7 @@
 			},
 			get_weiboHotNews() {
 				console.log('get_weiboHotNews')
-				ApiClient.Post('/app/hs/weibo', {
+				ApiClient.Post('/HSBaseWeb/hs/weibo', {
 			}).then(e => {
 					this.tab_num = 3
 					this.weibo_hotNewsList = e.data
@@ -73,7 +73,7 @@
 			},
 			get_sogouHotNews() {
 				console.log('get_sogouHotNews')
-				ApiClient.Post('/app/hs/sogou', {
+				ApiClient.Post('/HSBaseWeb/hs/sogou', {
 			}).then(e => {
 					this.tab_num = 4
 					this.sogou_hotNewsList = e.data
@@ -82,7 +82,7 @@
 			},
 			get_zhihuHotNews() {
 				console.log('get_zhihuHotNews')
-				ApiClient.Post('/app/hs/zhihu', {
+				ApiClient.Post('/HSBaseWeb/hs/zhihu', {
 			}).then(e => {
 					this.tab_num = 5
 					this.zhihu_hotNewsList = e.data
@@ -91,7 +91,7 @@
 			},
 			get_bilibiliHotNews() {
 				console.log('get_bilibiliHotNews')
-				ApiClient.Post('/app/hs/bilibili', {
+				ApiClient.Post('/HSBaseWeb/hs/bilibili', {
 			}).then(e => {
 					this.tab_num = 6
 					this.bilibili_hotNewsList = e.data
@@ -100,7 +100,7 @@
 			},
 			get_douyinHotNews() {
 				console.log('get_douyinHotNews')
-				ApiClient.Post('/app/hs/douyin', {
+				ApiClient.Post('/HSBaseWeb/hs/douyin', {
 			}).then(e => {
 					this.tab_num = 7
 					this.douyin_hotNewsList = e.data

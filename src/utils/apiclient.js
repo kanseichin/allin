@@ -4,7 +4,8 @@
 const ApiHost = 'http://121.37.190.224'
 
 const _api = {
-  getBaiduHotNews: '/app/hs/baidu'
+  // getBaiduHotNews: '/app/hs/baidu'
+  getBaiduHotNews: '/HSBaseWeb/hs/baidu'
 }
 
 const request = function (method, apiUrl, param) {
