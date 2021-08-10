@@ -3,6 +3,7 @@ html {-ms-touch-action: none;}
 page,ul,li,p {padding: 0;margin: 0;border: 0;word-break:break-all;}
 page{background:#fff; color:#333;}
 input,label,select,a,span,div,table,textarea{color:#333;}
+ul{line-height: 0;}
 li{list-style:none;}
 a{ text-decoration:none; cursor:default;}
 a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}/* 1.去除android a/button/input标签被点击*/
@@ -326,101 +327,13 @@ textarea::-ms-input-placeholder {color: #eee;}
 .padding30{padding: 30rpx;}
 .margintop20{margin-top: 20rpx;}
 .content_team{width:100%;}
-.tip{height: 100rpx; line-height: 100rpx;}
-.btn_plus{background: #fee611; color: #333; width:auto; height:70rpx; line-height: 70rpx; float: right; margin-top: 16rpx; display: inline-block; border-radius: 70rpx; text-align: center; font-size: 28rpx;}
-.btn_plus1{background: #fee611; color: #333; width:auto; height:60rpx; line-height: 60rpx; margin-top: 16rpx; display: inline-block; border-radius: 60rpx; text-align: center; font-size: 28rpx;}
-.btn_plus2{background: #efeff1; color: #333; width:auto; height:60rpx; line-height: 60rpx; margin-top: 16rpx; display: inline-block; border-radius: 60rpx; text-align: center; font-size: 28rpx;}
-.search_input{background: #efeff1; height: 80rpx; line-height: 80rpx; border-radius: 80rpx; width:calc(100% - 60rpx); font-size: 26rpx; background-size: 80rpx; padding: 0 30rpx; display: inline-block;}
-.search_input1{background: #efeff1 url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_ico3.png) left 10px center no-repeat; height: 60rpx; line-height: 60rpx; border-radius: 60rpx; width:200rpx; float: right; margin-top: 20rpx; font-size: 26rpx; background-size: 36rpx; padding: 0 30rpx 0 70rpx; display: inline-block;}
-.div_go1{background: #fff; text-align: left; padding-left: 15px;}
-.div_go1 .files{width:100%;}
-.div_go1 .files ._li{width:100%; min-height: 120rpx; line-height: 120rpx; padding-right: 15px;}
-.div_go1 .files_next{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/more2.png) right 15px center no-repeat; width:26px; height: 26px; background-size:26px; display: inline-block;}
-.div_go1 .files ._li .file_ico{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/wei_chat.png) center center no-repeat; margin-top: 30rpx; width:30px; height: 30px; background-size:30px; display: inline-block; float: left;}
-.div_go1 .files ._li .file_ico1{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/xlsx.png) center center no-repeat; margin-top: 30rpx; width:30px; height: 30px; background-size:30px; display: inline-block; float: left;}
-.div_go1 .files ._li ._div{float:left; width: calc(100% - 30px); margin-top: 20rpx;}
-.div_go1 .files ._li ._div ._p{padding: 0 0 0 15px; height: 44rpx; line-height: 44rpx;}
-.files_date{font-size:24rpx; color:#999; float:right;}
-.files_text2{font-size:24rpx; color:#b1b1b1;}
-.bottom_cao{background: #fff; width: 100%; position: fixed; left: 0; bottom: 0; padding: 20rpx 0 50rpx 0;}
-.bottom_cao ._li{width: 50%; float: left; text-align: center;}
-.bottom_cao ._li ._p{width: 100%; font-size: 26rpx;}
-.caocao{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/wei_chat.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.ico_selmore{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/ico_selmore.png) center center no-repeat; width: 40rpx; height: 40rpx; background-size: 40rpx; margin-top: 22rpx; display: inline-block; float: right;}
-
-.team_1{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_1.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.team_1a{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_1a.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.team_2{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_2.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.team_2a{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_2a.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.team_3{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_3.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.team_3a{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_3a.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.team_4{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_4.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-.team_4a{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_4a.png) center center no-repeat; width: 50rpx; height: 50rpx; background-size: 50rpx; display: inline-block;}
-
-.div_go2{background: #fff; text-align: left; padding-left: 15px;}
-.div_go2 .files{width:100%;}
-.div_go2 .files ._li{width:100%; min-height: 140rpx; line-height: 140rpx; padding-right: 15px;}
-.div_go2 .files_next{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/arr_r.png) right 15px center no-repeat; width:16px; height: 16px; background-size:16px; display: inline-block;}
-.div_go2 .files ._li .file_ico1{margin-top: 26rpx; width:30px; height: 30px; background-size:30px; display: inline-block; float: left;}
-.div_go2 .files ._li .file_ico2{margin-top: 10rpx; width:30px; height: 30px; background-size:30px; display: inline-block; float: left;}
-.div_go2 .files ._li .divs_1{float:left; width: calc(100% - 45px); margin-top: 16rpx; margin-left: 15px; padding-bottom: 3px;}
-.div_go2 .files ._li .divs_1 ._p{padding: 0; height: 44rpx; line-height: 44rpx;}
-.div_go2 .files ._li .divs_2{background:#efeff1; margin-left:0; padding:5px 10px; width:100%; margin-top: 10px; border-radius: 2px;}
-.div_go2 .files ._li .divs_2 ._p{padding: 0; height: 44rpx; line-height: 44rpx;}
-.div_go2 .files ._li .divs_3{width: calc(100% - 40px); margin-left: 40px;}
-.div_go2 .files ._li .divs_3 ._p{padding: 0; height: 44rpx; line-height: 44rpx;}
-.div_go2 .files ._li .divs_4{background:#fff; margin-left:0; width:100%; margin-top: 10px; line-height: 44rpx; font-size: 32rpx;}
-.div_go2 .files ._li .ul_imgs{width: 100%; overflow: hidden; display:block; margin-top: 15px;}
-.div_go2 .files ._li .ul_imgs .li_imgs{width:33%; height: 80px; background-size:80px; display: inline-block; float: left; margin-bottom: 10px;}
-.div_go2 .files ._li .ul_imgs .li_imgs .file_imgs{width:100%; height: 80px;}
-.team_more{background: #efeff1 url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_more.png) center center no-repeat; width:30px; height: 20px; line-height: 20px; background-size: 12px; display: inline-block; float: right;}
-
-.top_header{width: 60rpx; height: 60rpx; background-size: 60rpx; margin-top: 20rpx; display: inline-block;}
-.team_ico1{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_ico1.png) center center no-repeat; width:48rpx; height: 48rpx; background-size: 48rpx; display: inline-block; float: right; margin-top: 24rpx; margin-left: 20rpx;}
-.team_ico2{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/team_ico2.png) center center no-repeat; width:48rpx; height: 48rpx; background-size: 48rpx; display: inline-block; float: right; margin-top: 24rpx; margin-left: 20rpx;}
-.file_manage{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/file_manage.png) center center no-repeat; width: 90rpx; height: 90rpx; background-size: 90rpx; display: inline-block; position: fixed; bottom: 180rpx; right: 30rpx; z-index: 10;}
-
-.dialogDiv{width: calc(100% - 60rpx); min-height: 300px; background: #fff; padding-bottom: 50rpx; border-radius: 30rpx; display: inline-block; position: fixed; bottom: 50rpx; left: 30rpx; z-index: 1005;}
-.dialogDiv .dialogTitle{height: 90rpx; line-height: 90rpx; width:100%; text-align: center; font-size: 30rpx;}
-.dialogDiv .prod_close{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/prod_close.png) center center no-repeat; right: 20rpx; top: 20rpx; position: absolute; width: 44rpx; height: 44rpx; display: inline-block; background-size: 44rpx;}
-.dialogDiv .mod_title{text-align: left; font-size: 30rpx; height: 60rpx; line-height: 60rpx; padding: 0 30rpx; margin: 20rpx 0 10rpx 0;}
-.dialogDiv .mod_ul{width:100%; padding: 0 30rpx; margin: 20rpx 0; overflow: hidden;}
-.dialogDiv .mod_ul ._li{width:25%; text-align: center; float: left; margin-bottom: 20rpx;}
-.dialogDiv .mod_ul ._li ._p{font-size: 28rpx;}
-.dialogDiv .mod_ul ._li ._p .span1{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/fastsel.png) center center no-repeat; width:80rpx; height: 80rpx; display: inline-block; background-size: 80rpx;}
-.dialogDiv .mod_ul1{width:100%; padding: 0 30rpx; margin: 20rpx 0; overflow: hidden;}
-.dialogDiv .mod_ul1 ._li{width:33.33%; text-align: center; float: left; margin-bottom: 20rpx;}
-.dialogDiv .mod_ul1 ._li ._p{font-size: 28rpx;}
-.dialogDiv .mod_ul1 ._li ._p .span1{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/fastsel.png) center center no-repeat; width:50rpx; height: 50rpx; display: inline-block; background-size: 50rpx;}
-.dialogDiv .mod_div{background: #efeff1 url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/file_create1.png) right 30rpx center no-repeat; background-size: 36rpx; font-size: 30rpx; display: inline-block; height: 90rpx; line-height: 90rpx; width: calc(100% - 60rpx); margin-left: 30rpx; border-radius: 8rpx; padding: 0 30rpx; text-align: left;}
-.dialogDiv .mod_more{background: #efeff1 url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/file_chk1.png) right 30rpx center no-repeat; background-size: 38rpx; font-size: 30rpx; display: inline-block; height: 90rpx; line-height: 90rpx; width: calc(100% - 60rpx); margin-left: 30rpx; border-radius: 8rpx; padding: 0 30rpx; text-align: left;}
-.dialogDiv .mod_delete{background: #efeff1 url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/file_delete.png) right 30rpx center no-repeat; color: #ff4400; background-size: 36rpx; font-size: 30rpx; display: inline-block; height: 90rpx; line-height: 90rpx; width: calc(100% - 60rpx); margin-left: 30rpx; border-radius: 8rpx; padding: 0 30rpx; text-align: left;}
-.dialogDiv .mod_listtype{margin-left: 30rpx; display: inline-block; background: #e0e0e3; border-radius: 10rpx; width:calc(100% - 60rpx);}
-.dialogDiv .mod_listtype ._a{background: #e0e0e3; display: inline-block; width: calc(50% - 5rpx); height: 65rpx; line-height: 65rpx; text-align: center; border-radius: 10rpx; font-size: 30rpx; float: left;}
-.dialogDiv .mod_listtype .a_sel{background: #fff; height: 57rpx; line-height: 57rpx; width: calc(50% - 5rpx); margin: 5rpx 5rpx 0 5rpx; border-radius: 10rpx;}
-.dialogDiv .mod_list{width:calc(100% - 60rpx); border-radius: 8rpx; background: #efeff1; margin-left: 30rpx; margin-bottom: 30rpx;}
-.dialogDiv .mod_list .file_move{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/file_move.png) right 30rpx center no-repeat; background-size: 36rpx; font-size: 30rpx; display: inline-block; height: 90rpx; line-height: 90rpx; width: 100%; padding: 0 30rpx; text-align: left;}
-
-.file1{width:calc(100% - 60rpx); min-height: 120rpx; line-height: 120rpx; margin-left: 30rpx; margin-bottom: 50rpx; border-bottom: 1rpx solid #e8e8e8;}
-.file1 .file_ico1{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/xlsx.png) center center no-repeat; margin-top: 30rpx; width:30px; height: 30px; background-size:30px; display: inline-block; float: left;}
-.file1 ._div{float:left; width: calc(100% - 30px); margin-top: 20rpx;}
-.file1 ._div ._p{padding: 0 0 0 15px; height: 44rpx; line-height: 44rpx;}
-
-.div_go1a{background: #fff; text-align: left; padding-left: 15px;}
-.div_go1a .files{width:100%;}
-.div_go1a .files ._li{width:33.33%; padding-right: 15px; position: relative; float: left; margin-bottom: 20rpx;}
-.div_go1a .files_next{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/more2.png) center center no-repeat; width:26px; height: 26px; background-size:26px; display: inline-block; float: right;}
-.div_go1a .files ._li .file_ico1{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/xlsx.png) center center no-repeat; margin-bottom: 20rpx; vertical-align: top; width:100%; max-width: 100px; height: 100px; background-size:100px; display: inline-block;}
-.div_go1a .files ._li ._div{width: 100%; margin-bottom: 20rpx;}
-.div_go1a .files ._li ._div ._p{padding: 0; min-height: 60rpx; line-height: 30rpx;font-size: 26rpx;}
-.div_go1a .files ._li ._div .span_bottom{height:26px; line-height: 26px; width: 100%; display: inline-block; vertical-align: top; font-size: 24rpx; color: #c1c1c1;}
 
 /*No.1*/
 .no1_tab{width: 100%; padding: 0 20rpx; display: inline-block; position: fixed; top: 0; background: #fff; z-index: 10;}
 .no1_tab li{min-width: 90rpx; height: 90rpx; line-height: 90rpx; text-align: center; font-size: 30rpx; color: #d1d1d1; float: left; display: inline-block; padding: 0 10rpx;}
 .no1_tab .tab_sel{color: #ff4400; border-bottom: 4rpx solid #ff4400; font-weight: bold; padding-bottom: 6rpx;}
 .no1_content{width: 100%; background: #fff; padding: 30rpx; display: inline-block; margin-top: 20rpx; margin-top: 90rpx;}
-.no1_content ul{width:100%;}
+.no1_content ul{width:100%; line-height: 0;}
 .no1_content ul li{width:calc(100% - 30px); min-height: 80rpx; line-height: 80rpx; color: #333; font-size: 30rpx; position: relative; display: inline-flex;}
 .no1_content ul li .topnum{width: 70rpx; display: inline-block; color: #ff4400; font-style: italic; vertical-align: top;}
 .no1_content ul li a{position: absolute; right: 0; top: 24rpx;}

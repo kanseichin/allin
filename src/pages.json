@@ -29,6 +29,7 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "#f8f8f8"
+		"backgroundColor": "#f8f8f8",
+		"navigationStyle": "custom" //原生导航栏不显示
 	}
 }
