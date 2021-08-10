@@ -445,4 +445,4 @@ textarea::-ms-input-placeholder {color: #eee;}
 .game_resave_dialog{width: calc(100% - 60rpx); background: #fff; margin-left: 30rpx; position: fixed; top: 8%; left: 0; z-index: 10; padding: 30rpx 0 0 0; display: inline-block;-moz-box-shadow: 1px 1px 10px -2px #c1c1c1;-webkit-box-shadow: 1px 1px 10px -2px #c1c1c1;box-shadow: 1px 1px 10px -2px #c1c1c1; border-radius:10rpx; border:1px solid #eee;}
 .game_resave_dialog .resave_input{width:calc(100% - 100rpx); margin-left: 30rpx; background: #f8f8f8; border-radius: 10rpx; padding: 20rpx; font-size: 26rpx; height: 200rpx; line-height: 20rpx;}
 .game_resave_dialog p{width: 100%; margin-top: 30rpx;}
-.game_resave_dialog a{width: 50%; float: left; height: 80rpx; line-height: 80rpx; text-align: center; display: inline-block; border-top: 1rpx solid #eee;}
+.game_resave_dialog a{width: 50%; float: left; height: 80rpx; font-size: 15px; line-height: 80rpx; text-align: center; display: inline-block; border-top: 1rpx solid #eee;}

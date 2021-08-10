@@ -20,10 +20,6 @@ export default ({
 						url: 'ico_cctv.png',
 						name: '央视CCTV',
 						palyUrl: 'https://tv.cctv.com/live/m/',
-					}, {
-						url: 'ico_hunanweishi.png',
-						name: '湖南卫视',
-						palyUrl: 'http://www.hunanweishi.tv/',
 					}]
 			}
 		},

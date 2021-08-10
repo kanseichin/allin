@@ -1,6 +1,5 @@
-// import qiniuUploader from '@/utils/qiniuUploader'
+import axios from 'axios'
 
-// const ApiHost = 'http://hotsearch.online'
 const ApiHost = 'http://121.37.190.224'
 
 const _api = {
@@ -8,191 +7,238 @@ const _api = {
   getBaiduHotNews: '/HSBaseWeb/hs/baidu'
 }
 
+const NoAuth = {
+  Processing: false,
+  Action: null
+}
+
+const setAuthAction = function(action){
+  NoAuth.Action = action
+}
+
 const request = function (method, apiUrl, param) {
   console.log('request', apiUrl)
-  param = bindSystemInfo(param)
-  
+  var paramStr = formatParamStr(param)
   var requestPromise = new Promise((resolve, reject) => {
-    wx.request({
+    axios({
       url: apiUrl,
-      data: param,
-      method: method.toUpperCase(),
-      header: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-      },
-      success: function (res) {
-        console.log(res.data.status)
-        if (res.data.status === 1 || res.data.status === 200) {
-          res.data.status = 1
-          resolve(res.data)
-        } else {
-          // console.log(JSON.stringify(res))
-          reject(res.data)
-        }
-      },
-      fail: function (e) {
-        // console.log(e)
-        if (e.statusCode === 401) {
-          // 提示登录
-        }
-        e.msg = e.errMsg
-        reject(e)
+      data: paramStr,
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      method: method
+    }).then((e) => {
+      console.log('request1', apiUrl)
+      let res = e.data
+      if (res.data.status === 1 || res.data.status === 200) {
+        res.data.status = 1
+        resolve(res.data)
+      } else {
+        // console.log(JSON.stringify(res))
+        reject(res.data)
       }
+    }).catch(err => {
+      console.log(err)
+      reject(err)
     })
   })
 
   return requestPromise
 }
 
-const upload = function(filePath) {
-  return new Promise((resolve, reject) => {
-    qiniuUploader.upload(filePath, '', (res) => {
-      resolve(res)
-    }, (err) => {
+const upload = function (formData, type) {
+  var requestPromise = new Promise((resolve, reject) => {
+    let url = UploadUrl
+    if (type) url += `?type=${type}`
+    axios({
+      url: url,
+      data: formData,
+      headers: { 'content-type': 'multipart/form-data' },
+      method: 'post'
+    }).then(function (res) {
+      resolve(res.data)
+    }).catch(function (err) {
       reject(err)
-      console.error('upload error: ' + JSON.stringify(err))
-    },
-    null,
-    (progress) => {})
+    })
   })
+
+  return requestPromise
 }
 
-const initUpload = function(options) {
-  qiniuUploader.init(options)
+const qiniuToken = {
+  uptoken: '',
+  getting: false,
+  domain: '',
+  expire: -1,
+  private: false
 }
+const upload2Qiniu = async function (file, isPrivate) {
+  isPrivate = isPrivate || false
+  let timeStamp = new Date().getTime()
+  if (!qiniuToken.uptoken || qiniuToken.expire < timeStamp || qiniuToken.private != isPrivate) {
+    // 正在获取token
+    if(qiniuToken.getting){
+      return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+          upload2Qiniu(file, isPrivate).then(resolve).catch(reject)
+        },500)
+      }) 
+    }
 
-const isUnlogin = function (status) {
-  if (status === "002100") {
-    return true;
+    await getQiniuToken(isPrivate)
   }
 
-  if (status.length === 6 && status.substr(0, 3) === "003") {
-    return true;
-  }
-
-  return false;
+  return uploadPromise(file)
 }
 
-const bindSystemInfo = function (param) {
-  param = param || {};
-  return param
+const uploadPromise = function(file) {
+  let key = Utils.uuid(32) + Utils.getFileExtension(file.name)
+  var requestPromise = new Promise((resolve, reject) => {
+    let observable = qiniu.upload(file, key, qiniuToken.uptoken)
+    observable.subscribe({
+      next: (res) => {
+        console.log('next', res)
+      },
+      error: (err) => {
+        console.log('err', err)
+        if(err.code == 401) { // token失效
+          qiniuToken.uptoken = ''
+        }
+        reject(err)
+      },
+      complete: (res) => {
+        console.log('complete', res)
+        let url = qiniuToken.domain + key
+        resolve({
+          key: key,
+          url: url
+        })
+      }
+    })
+    // subscription.unsubscribe() // 上传取消
+  })
+
+  return requestPromise
 }
 
-const apiGet = function (action, param) {
+const login = function () {
+  return apiPost(_api.LoginByToken, {})
+    .then((e) => {
+      console.log(e)
+    })
+}
+
+const apiGet = function (action, param, noAuthCallback) {
   var apiUrl = ApiHost + action
-  return request('GET', apiUrl, param)
+  return request('get', apiUrl, param, noAuthCallback)
 }
 
-const apiPost = function (action, param) {
+const apiPost = function (action, param, noAuthCallback) {
   var apiUrl = ApiHost + action
-  return request('POST', apiUrl, param)
+  return request('post', apiUrl, param, noAuthCallback)
 }
 
-const apiDelete = function (action, param) {
-  var apiUrl = ApiHost + action
-  return request('DELETE', apiUrl, param)
-}
-
-const writeLog = function(message) {
+const writeLog = function (message) {
   return apiPost(_api.WriteLog, {
-    message: message
-  })
+    message: message,
+    version: sessionStorage.getItem('AppVersion')
+  }).then(() => { })
 }
 
-const loginByToken = function () {
-  return new Promise((resolve, reject) => {
-    if (App.LoginUser) {
-      apiPost(_api.loginByToken, {}).then((e) => {
-        if (e.status === 1) {
-          saveLoginUser(e.data)
-          resolve()
-        } else {
-          saveLoginUser();
-          reject(e)
-        }
-      }).catch(res => {
-        reject(res)
-      });
-    } else {
-      saveLoginUser();
-      reject(new Error('找不到登录信息'))
-    }
-  })
-}
-const saveLoginUser = function (data) {
-  data = data || null;
-
-  if (data) {
-    App.LoginUser = data;
-    wx.setStorage({
-      key: "LoginUser", data: data
-    });
-  } else {
-    App.LoginUser = App.LoginInfo = null;
-    wx.removeStorage({ key: 'LoginUser' });
-    wx.removeStorage({ key: 'LoginInfo' });
+/**
+ * Format params into querying string.
+ * @param {{}}
+ * @return {string[]}
+ */
+function formatParams(queryName, value) {
+  queryName = queryName.replace(/=/g, '')
+  var result = []
+  if (value === null || value === undefined) return result
+  switch (value.constructor) {
+    case String:
+    case Number:
+    case Boolean:
+      result.push(encodeURIComponent(queryName) + '=' + encodeURIComponent(value))
+      break
+    case Array:
+      value.forEach(function (item) {
+        result = result.concat(formatParams(queryName + '[]=', item))
+      })
+      break
+    case Object:
+      Object.keys(value).forEach(function (key) {
+        var item = value[key]
+        result = result.concat(formatParams(queryName + '[' + key + ']', item))
+      })
+      break
   }
+
+  return result
 }
 
-const getMPSettings = function () {
-  return new Promise((resolve, reject) => {
-    if (App.MPSettings) {
-      resolve(App.MPSettings)
+/**
+ * Flat querys.
+ * @param {any} array
+ * @returns
+ */
+function flatten(array) {
+  var querys = []
+  array.forEach(function (item) {
+    if (typeof item === 'string') {
+      querys.push(item)
     } else {
-      apiGet(_api.getMPSettings, {}).then((e) => {
-        if (e.status === 1 && e.data != null) {
-          App.MPSettings = e.data
-          resolve(App.MPSettings)
-        } else {
-          reject(e)
-        }
-      }).catch(e => {
-        reject(e)
-      })
+      querys = querys.concat(flatten(item))
     }
+  })
+
+  return querys
+}
+
+function formatParamStr(params) {
+  var queryStrs = []
+  Object.keys(params).forEach(function (queryName) {
+    queryStrs = queryStrs.concat(formatParams(queryName, params[queryName]))
+  })
+
+  return flatten(queryStrs).join('&')
+}
+
+function getQiniuToken(isPrivate) {
+  qiniuToken.getting = true
+  let api = isPrivate? _api.GetQiniuPrivateToken:_api.GetQiniuToken
+  return apiPost(api, {}).then(e => {
+    qiniuToken.uptoken = e.data.uptoken
+    qiniuToken.domain = e.data.domain
+    let deadline = new Date().getTime() + (55 * 60 * 1000)
+    qiniuToken.expire = deadline
+    qiniuToken.getting = false
+    qiniuToken.private = isPrivate || false
+  }).catch(()=>{
+    qiniuToken.getting = false
   })
 }
 
-const getSupplier = function (sid, changeBarTitle) {
-  sid = sid || App.Query.sid;
-  changeBarTitle = typeof changeBarTitle === "boolean" ? changeBarTitle : true;
+const setToken = function (userinfo) {
+  sessionStorage.setItem('CurrentUser', JSON.stringify(userinfo))
+}
 
-  return new Promise((resolve, reject) => {
-    if (!sid) {
-      if (changeBarTitle) wx.setNavigationBarTitle({ title: '蛐蛐侠' });
-      return;
-    }
+const removeToken = function () {
+  sessionStorage.removeItem('CurrentUser')
+}
 
-    if (App.Supplier) {
-      if (changeBarTitle) wx.setNavigationBarTitle({ title: App.Supplier.ShopName });
-      resolve(App.Supplier);
-    } else {
-      apiGet(_api.getUserDetailUrl, { sid: sid }).then(e => {
-        if (e.status === 1) {
-          App.Supplier = e.data;
-          if (changeBarTitle) wx.setNavigationBarTitle({ title: App.Supplier.ShopName });
-          resolve(App.Supplier);
-        } else {
-          reject(e);
-        }
-      })
-        .catch(e => {
-          reject(e);
-        });
-    }
-  });
+const currentUser = function () {
+  var currentUser = sessionStorage.getItem('CurrentUser')
+  return currentUser && JSON.parse(currentUser)
 }
 
 export default {
   Apis: _api,
+  SetToken: setToken,
+  SetAuthAction: setAuthAction,
+  RemoveToken: removeToken,
+  CurrentUser: currentUser,
+  LoginByToken: login,
   Get: apiGet,
   Post: apiPost,
-  Delete: apiDelete,
   Upload: upload,
-  InitUpload: initUpload,
-  WriteLog: writeLog,
-  GetMPSettings: getMPSettings,
-  LoginByToken: loginByToken,
-  GetSupplier: getSupplier,
-  IsUnloginStatus: isUnlogin
+  Upload2Qiniu: upload2Qiniu,
+  WriteLog: writeLog
 }
