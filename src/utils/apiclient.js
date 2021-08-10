@@ -26,14 +26,12 @@ const request = function (method, apiUrl, param) {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       method: method
     }).then((e) => {
-      console.log('request1', apiUrl)
       let res = e.data
-      if (res.data.status === 1 || res.data.status === 200) {
-        res.data.status = 1
-        resolve(res.data)
+      if (res.status === 1 || res.status === 200) {
+        resolve(res)
       } else {
         // console.log(JSON.stringify(res))
-        reject(res.data)
+        reject(res)
       }
     }).catch(err => {
       console.log(err)

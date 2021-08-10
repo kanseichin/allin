@@ -421,7 +421,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 .no1_tab .tab_sel{color: #ff4400; border-bottom: 4rpx solid #ff4400; font-weight: bold; padding-bottom: 6rpx;}
 .no1_content{width: 100%; background: #fff; padding: 30rpx; display: inline-block; margin-top: 20rpx; margin-top: 90rpx;}
 .no1_content ul{width:100%;}
-.no1_content ul li{width:100%; min-height: 80rpx; line-height: 80rpx; color: #333; font-size: 30rpx; position: relative; display: inline-flex;}
+.no1_content ul li{width:calc(100% - 30px); min-height: 80rpx; line-height: 80rpx; color: #333; font-size: 30rpx; position: relative; display: inline-flex;}
 .no1_content ul li .topnum{width: 70rpx; display: inline-block; color: #ff4400; font-style: italic; vertical-align: top;}
 .no1_content ul li a{position: absolute; right: 0; top: 24rpx;}
 .no1_content ul li span{width: calc(100% - 150rpx); display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
