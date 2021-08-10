@@ -2,7 +2,7 @@
 	"name": "",
 	"appid": "",
 	"description": "",
-	"versionName": "1.0.0",
+	"versionName": "1.0.1",
 	"versionCode": "100",
 	"transformPx": false,
 	"app-plus": { /* 5+App特有相关 */
@@ -71,5 +71,13 @@
     },
     "mp-qq" : {
         "usingComponents" : true
-    }
+	},
+	"h5" : {
+		"router" : {
+			"base" : "./hs/"
+		},
+		"devServer" : {
+			"https" : true
+		}
+	}
 }
