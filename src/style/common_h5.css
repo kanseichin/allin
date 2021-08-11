@@ -352,7 +352,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 .news_cao li{width: 33.33%; float: left; text-align: center; margin-bottom: 50rpx;}
 .news_cao li p{width: 100%; font-size: 28rpx; min-height: 60rpx; line-height: 60rpx;}
 .news_cao li .ico1{display: inline-block; width: 100rpx; height: 100rpx; border-radius: 4rpx;}
-.tools_p{width:100%; border-left: 6rpx solid #ffa622; height: 29rpx; line-height: 29rpx; padding-left: 10rpx; font-size: 30rpx; color: #999;}
+.tools_p{width: calc(100% - 8px); border-left: 3px solid #ffa622; height: 29rpx; line-height: 29rpx; padding-left: 10rpx; font-size: 30rpx; color: #999;}
 
 .game_resave{font-size: 28rpx; color: #00a7ff; float: right;}
 .game_resave_dialog{width: calc(100% - 60rpx); background: #fff; margin-left: 30rpx; position: fixed; top: 8%; left: 0; z-index: 10; padding: 30rpx 0 0 0; display: inline-block;-moz-box-shadow: 1px 1px 10px -2px #c1c1c1;-webkit-box-shadow: 1px 1px 10px -2px #c1c1c1;box-shadow: 1px 1px 10px -2px #c1c1c1; border-radius:10rpx; border:1px solid #eee;}

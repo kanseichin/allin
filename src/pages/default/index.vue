@@ -56,6 +56,10 @@
 						url: 'ico_douyin.png',
 						name: '抖音',
 						tabnum: 7
+					}, {
+						url: 'ico_douban.png',
+						name: '豆瓣',
+						tabnum: 8
 					}]
 			}
 		},

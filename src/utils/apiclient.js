@@ -26,6 +26,7 @@ const request = function (method, apiUrl, param) {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
       method: method
     }).then((e) => {
+      console.log('request123', e.data)
       let res = e.data
       if (res.status === 1 || res.status === 200) {
         resolve(res)

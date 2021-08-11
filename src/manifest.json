@@ -74,10 +74,10 @@
 	},
 	"h5" : {
 		"router" : {
-			"base" : "./hs/"
+			"base" : "./"
 		},
 		"devServer" : {
-			"https" : true
+			"https" : false
 		}
 	}
 }

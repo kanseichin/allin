@@ -22,6 +22,9 @@
 			<ul v-if="tab_num===7&&douyin_hotNewsList && douyin_hotNewsList.length > 1">
 				<li v-for="(list,index) in douyin_hotNewsList" :key="index" @click="gotoDetail(list.word, 'douyin')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
 			</ul>
+			<ul v-if="tab_num===8&&douban_hotNewsList && douban_hotNewsList.length > 1">
+				<li v-for="(list,index) in douban_hotNewsList" :key="index" @click="gotoDetail(list.url, 'douban')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
+			</ul>
 		</div>
 	</view>
 </template>
@@ -40,6 +43,7 @@
 				zhihu_hotNewsList: [],
 				bilibili_hotNewsList: [],
 				douyin_hotNewsList: [],
+				douban_hotNewsList: [],
 				url: ''
 			}
 		},
@@ -49,6 +53,7 @@
 				ApiClient.Post('/HSBaseWeb/hs/baidu', {
 			}).then(e => {
 					this.tab_num = 1
+					console.log('get_BaiduHotNews', e.data)
 					this.baidu_hotNewsList = e.data
 				})
 				.catch(e => { })
@@ -107,37 +112,58 @@
 				})
 				.catch(e => { })
 			},
+			get_doubanHotNews() {
+				console.log('get_doubanHotNews')
+				ApiClient.Post('/HSBaseWeb/hs/douban', {
+			}).then(e => {
+					this.tab_num = 8
+					this.douban_hotNewsList = e.data
+				})
+				.catch(e => { })
+			},
 			gotoDetail(word, urlheader) {
 				console.log('encode', encodeURIComponent(word))
 				var header = ''
 				switch (urlheader) {
 					case 'baidu':
 						header = 'https://www.baidu.com/s?wd='
-						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
+						window.location.href = header + '' + word + ''
 						break
 					case 'toutiao':
 						header = 'https://so.toutiao.com/search?keyword='
-						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '%23' + word + '%23') })
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '%23' + word + '%23') })
+						window.location.href = header + '%23' + word + '%23'
 						break
 					case 'weibo':
 						header = 'https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D'
-						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '%23' + word + '%23') })
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
+						window.location.href = header + '' + word + ''
 						break;
 					case 'sogou':
 						header = 'https://www.sogou.com/sogou?query='
-						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '&ie=utf8&pid=sogou-wsse-721e049e9903c3a7') })
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '&ie=utf8&pid=sogou-wsse-721e049e9903c3a7') })
+						window.location.href = header + '' + word + '&ie=utf8&pid=sogou-wsse-721e049e9903c3a7'
 						break;
 					case 'zhihu':
 						header = 'https://www.zhihu.com/search?q='
-						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '&utm_content=search_hot&type=content') })
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '&type=content') })
+						window.location.href = header + '' + word + '&type=content'
 						break;
 					case 'bilibili':
 						header = 'https://'
-						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word.slice(2) + '') })
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word.slice(2) + '') })
+						window.location.href = header + '' + word.slice(2) + ''
 						break;
 					case 'douyin':
 						header = 'https://www.douyin.com/search/'
-						wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
+						window.location.href = header + '' + word + ''
+						break;
+					case 'douban':
+						header = ''
+						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
+						window.location.href = header + '' + word + ''
 						break;
 				}
 			},
@@ -165,6 +191,9 @@
 					break
 				case '7':
 					this.get_douyinHotNews()
+					break
+				case '8':
+					this.get_doubanHotNews()
 					break
 			}
 			wx.setNavigationBarTitle({
