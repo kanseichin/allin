@@ -101,12 +101,14 @@ export default ({
 		methods: {
 			gotoDefault(palyUrl) {
 				console.log('gotoDefault', palyUrl)
-				wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(palyUrl) })
+				// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(palyUrl) })
+				window.location.href = palyUrl
 			},
 			resaveGo() {
 				console.log('resaveGo', this.resaveinput)
 				if(this.resaveinput != '') {
-					wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(this.resaveinput) })
+					// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(this.resaveinput) })
+					window.location.href = this.resaveinput
 					this.resaveinput = ''
 					this.is_resaveinput = false
 				}

@@ -1,7 +1,7 @@
 page,body,view,label {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 html {-ms-touch-action: none;}
 page,body,ul,li,p {padding: 0;margin: 0;border: 0;word-break:break-all;}
-page,body{background:#fff; color:#333;}
+page,body{background:#fff; color:#333; overflow-x: hidden;}
 input,label,select,a,span,div,table,textarea{color:#333;}
 ul{line-height: 0;}
 li{list-style:none;}
