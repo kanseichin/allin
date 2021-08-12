@@ -8,7 +8,7 @@
 			</li>
 		</ul>
 		<cctv-list ref="CctvList"></cctv-list>
-		<movie-list ref="MovieList"></movie-list>
+		<movie ref="Movie"></movie>
 		<game-list ref="GameList"></game-list>
 	</view>
 </template>
@@ -18,12 +18,12 @@
 	import ApiClient from '../../utils/apiclient'
 	import CctvList from '../components/cctvList.vue';
 	import GameList from '../components/gameList.vue'
-	import MovieList from '../components/movieList.vue'
+	import Movie from '../components/movie.vue'
 
 	export default Vue.extend({
   		components: {
 				GameList,
-				MovieList,
+				Movie,
 				CctvList
 			},
 		data() {
@@ -56,10 +56,6 @@
 						url: 'ico_douyin.png',
 						name: '抖音',
 						tabnum: 7
-					}, {
-						url: 'ico_douban.png',
-						name: '豆瓣',
-						tabnum: 8
 					}]
 			}
 		},

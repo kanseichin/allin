@@ -22,14 +22,11 @@
 			<ul v-if="tab_num===7&&douyin_hotNewsList && douyin_hotNewsList.length > 1">
 				<li v-for="(list,index) in douyin_hotNewsList" :key="index" @click="gotoDetail(list.word, 'douyin')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
 			</ul>
-			<ul v-if="tab_num===8&&douban_hotNewsList && douban_hotNewsList.length > 1">
-				<li v-for="(list,index) in douban_hotNewsList" :key="index" @click="gotoDetail(list.url, 'douban')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
-			</ul>
 		</div>
 	</view>
 </template>
 
-<script lang="ts">
+<script>
 	import Vue from 'vue'
 	import ApiClient from '../../utils/apiclient'
 	export default Vue.extend({
@@ -43,14 +40,13 @@
 				zhihu_hotNewsList: [],
 				bilibili_hotNewsList: [],
 				douyin_hotNewsList: [],
-				douban_hotNewsList: [],
-				url: ''
+				douban_hotNewsList: []
 			}
 		},
 		methods: {
 			get_BaiduHotNews() {
 				console.log('get_BaiduHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/baidu', {
+				ApiClient.Post('/HSBaseWeb/news/baidu', {
 			}).then(e => {
 					this.tab_num = 1
 					console.log('get_BaiduHotNews', e.data)
@@ -60,7 +56,7 @@
 			},
 			get_toutiaoHotNews() {
 				console.log('get_toutiaoHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/toutiao', {
+				ApiClient.Post('/HSBaseWeb/news/toutiao', {
 			}).then(e => {
 					this.tab_num = 2
 					this.toutiao_hotNewsList = e.data
@@ -69,7 +65,7 @@
 			},
 			get_weiboHotNews() {
 				console.log('get_weiboHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/weibo', {
+				ApiClient.Post('/HSBaseWeb/news/weibo', {
 			}).then(e => {
 					this.tab_num = 3
 					this.weibo_hotNewsList = e.data
@@ -78,7 +74,7 @@
 			},
 			get_sogouHotNews() {
 				console.log('get_sogouHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/sogou', {
+				ApiClient.Post('/HSBaseWeb/news/sogou', {
 			}).then(e => {
 					this.tab_num = 4
 					this.sogou_hotNewsList = e.data
@@ -87,7 +83,7 @@
 			},
 			get_zhihuHotNews() {
 				console.log('get_zhihuHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/zhihu', {
+				ApiClient.Post('/HSBaseWeb/news/zhihu', {
 			}).then(e => {
 					this.tab_num = 5
 					this.zhihu_hotNewsList = e.data
@@ -96,7 +92,7 @@
 			},
 			get_bilibiliHotNews() {
 				console.log('get_bilibiliHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/bilibili', {
+				ApiClient.Post('/HSBaseWeb/news/bilibili', {
 			}).then(e => {
 					this.tab_num = 6
 					this.bilibili_hotNewsList = e.data
@@ -105,19 +101,10 @@
 			},
 			get_douyinHotNews() {
 				console.log('get_douyinHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/douyin', {
+				ApiClient.Post('/HSBaseWeb/news/douyin', {
 			}).then(e => {
 					this.tab_num = 7
 					this.douyin_hotNewsList = e.data
-				})
-				.catch(e => { })
-			},
-			get_doubanHotNews() {
-				console.log('get_doubanHotNews')
-				ApiClient.Post('/HSBaseWeb/hs/douban', {
-			}).then(e => {
-					this.tab_num = 8
-					this.douban_hotNewsList = e.data
 				})
 				.catch(e => { })
 			},
@@ -160,11 +147,6 @@
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
 						window.location.href = header + '' + word + ''
 						break;
-					case 'douban':
-						header = ''
-						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
-						window.location.href = header + '' + word + ''
-						break;
 				}
 			},
 		},
@@ -191,9 +173,6 @@
 					break
 				case '7':
 					this.get_douyinHotNews()
-					break
-				case '8':
-					this.get_doubanHotNews()
 					break
 			}
 			wx.setNavigationBarTitle({

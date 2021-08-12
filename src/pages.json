@@ -23,6 +23,12 @@
 			"style": {
 				"navigationBarTitleText": "喃啵旺"
 			}
+		},
+		{
+			"path": "pages/movieList/index",
+			"style": {
+				"navigationBarTitleText": "喃啵旺"
+			}
 		}
 	],
 	"globalStyle": {
