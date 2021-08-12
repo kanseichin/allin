@@ -1,5 +1,5 @@
 <template>
-    <view>
+    <view class="content_team">
 		<div class="no1_content" style="margin-top:0; padding-top:0;">
 			<ul v-if="tab_num===1&&douban_hotNewsList && douban_hotNewsList.length > 1">
 				<li v-for="(list,index) in douban_hotNewsList" :key="index" @click="gotoDetail(list.url, 'douban')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>

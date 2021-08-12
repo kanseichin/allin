@@ -1,7 +1,7 @@
-page,view,label {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+page,body,view,label {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 html {-ms-touch-action: none;}
-page,ul,li,p {padding: 0;margin: 0;border: 0;word-break:break-all;}
-page{background:#fff; color:#333;}
+page,body,ul,li,p {padding: 0;margin: 0;border: 0;word-break:break-all;}
+page,body{background:#fff; color:#333;}
 input,label,select,a,span,div,table,textarea{color:#333;}
 ul{line-height: 0;}
 li{list-style:none;}
@@ -326,7 +326,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 
 .padding30{padding: 30rpx;}
 .margintop20{margin-top: 20rpx;}
-.content_team{width:100%;}
+.content_team{width:100%; max-width: 600px; margin: 0 auto;}
 
 /*No.1*/
 .no1_tab{width: 100%; padding: 0 20rpx; display: inline-block; position: fixed; top: 0; background: #fff; z-index: 10;}
@@ -355,7 +355,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 .tools_p{width: calc(100% - 8px); border-left: 3px solid #ffa622; height: 29rpx; line-height: 29rpx; padding-left: 10rpx; font-size: 30rpx; color: #999;}
 
 .game_resave{font-size: 28rpx; color: #00a7ff; float: right;}
-.game_resave_dialog{width: calc(100% - 60rpx); background: #fff; margin-left: 30rpx; position: fixed; top: 8%; left: 0; z-index: 10; padding: 30rpx 0 0 0; display: inline-block;-moz-box-shadow: 1px 1px 10px -2px #c1c1c1;-webkit-box-shadow: 1px 1px 10px -2px #c1c1c1;box-shadow: 1px 1px 10px -2px #c1c1c1; border-radius:10rpx; border:1px solid #eee;}
+.game_resave_dialog{width: 300px; background: #fff; position: fixed; top: 8%; left: calc(50% - 150px); z-index: 10; padding: 30rpx 0 0 0; display: inline-block;-moz-box-shadow: 1px 1px 10px -2px #c1c1c1;-webkit-box-shadow: 1px 1px 10px -2px #c1c1c1;box-shadow: 1px 1px 10px -2px #c1c1c1; border-radius:10rpx; border:1px solid #eee;}
 .game_resave_dialog .resave_input{width:calc(100% - 100rpx); margin-left: 30rpx; background: #f8f8f8; border-radius: 10rpx; padding: 20rpx; font-size: 26rpx; height: 200rpx; line-height: 20rpx;}
 .game_resave_dialog p{width: 100%; margin-top: 30rpx;}
 .game_resave_dialog a{width: 50%; float: left; height: 80rpx; font-size: 15px; line-height: 80rpx; text-align: center; display: inline-block; border-top: 1rpx solid #eee;}

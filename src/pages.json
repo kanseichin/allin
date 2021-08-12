@@ -3,31 +3,37 @@
 		{
 			"path": "pages/default/index",
 			"style": {
-				"navigationBarTitleText": "喃啵旺"
+				"navigationBarTitleText": "搜呱"
 			}
 		},
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "喃啵旺"
+				"navigationBarTitleText": "搜呱"
 			}
 		},
 		{
 			"path": "pages/newsList/index",
 			"style": {
-				"navigationBarTitleText": "喃啵旺"
+				"navigationBarTitleText": "搜呱"
 			}
 		},
 		{
 			"path": "pages/newsDetail/index",
 			"style": {
-				"navigationBarTitleText": "喃啵旺"
+				"navigationBarTitleText": "搜呱"
 			}
 		},
 		{
 			"path": "pages/movieList/index",
 			"style": {
-				"navigationBarTitleText": "喃啵旺"
+				"navigationBarTitleText": "搜呱"
+			}
+		},
+		{
+			"path": "pages/bookList/index",
+			"style": {
+				"navigationBarTitleText": "搜呱"
 			}
 		}
 	],

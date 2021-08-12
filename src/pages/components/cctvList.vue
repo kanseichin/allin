@@ -25,8 +25,7 @@ export default ({
 		},
 		methods: {
 			gotoDefault(palyUrl) {
-				console.log('gotoDefault', palyUrl)
-				wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(palyUrl) })
+				window.location.href = palyUrl
 			}
 		},
 		onLoad() {
