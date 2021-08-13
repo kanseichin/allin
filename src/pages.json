@@ -41,6 +41,12 @@
 			"style": {
 				"navigationBarTitleText": "搜呱"
 			}
+		},
+		{
+			"path": "pages/mallAdmin/index",
+			"style": {
+				"navigationBarTitleText": "搜呱-淘宝管理"
+			}
 		}
 	],
 	"globalStyle": {
