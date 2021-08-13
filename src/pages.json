@@ -35,6 +35,12 @@
 			"style": {
 				"navigationBarTitleText": "搜呱"
 			}
+		},
+		{
+			"path": "pages/mallList/index",
+			"style": {
+				"navigationBarTitleText": "搜呱"
+			}
 		}
 	],
 	"globalStyle": {

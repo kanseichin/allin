@@ -339,6 +339,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 .no1_content ul li a{position: absolute; right: 0; top: 24rpx;}
 .no1_content ul li span{width: calc(100% - 150rpx); display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .shadow_for{-moz-box-shadow: 0 0px 10px 5px #ccc;-webkit-box-shadow: 0 0px 10px 5px #ccc;box-shadow: 0 0px 10px 5px #ccc;}
+.shadow_for1{-moz-box-shadow: 0 0px 10px -1px #ccc;-webkit-box-shadow: 0 0px 10px -1px #ccc;box-shadow: 0 0px 10px -1px #ccc;}
 .c-text{display: inline-block;padding: 0 2px;text-align: center;vertical-align: middle;font-style: normal;color: #fff;overflow: hidden;line-height: 16px;height: 16px;font-size: 12px;border-radius: 4px;font-weight: 200;}
 .c-text-fei{background-color: #fc3200;}
 .c-text-hot{background-color: #f60;}
@@ -348,14 +349,16 @@ textarea::-ms-input-placeholder {color: #eee;}
 .detail_t .imp_title{font-weight: bold;}
 .detail_t img{width: 100%;}
 
-.news_cao{background: #fff; width: 100%; margin-top: 50rpx; display: inline-block;}
-.news_cao li{width: 33.33%; float: left; text-align: center; margin-bottom: 50rpx;}
+.news_cao{background: #fff; width: 100%; margin-top: 20rpx; display: inline-block;}
+.news_cao li{width: 33.33%; float: left; text-align: center; margin: 20rpx 0; padding: 20rpx 0;}
+.news_cao li:hover{-moz-box-shadow: 0 0px 10px -1px #ccc;-webkit-box-shadow: 0 0px 10px -1px #ccc;box-shadow: 0 0px 10px -1px #ccc;}
 .news_cao li p{width: 100%; font-size: 28rpx; min-height: 60rpx; line-height: 60rpx;}
 .news_cao li .ico1{display: inline-block; width: 100rpx; height: 100rpx; border-radius: 4rpx;}
 .tools_p{width: calc(100% - 8px); border-left: 3px solid #ffa622; height: 29rpx; line-height: 29rpx; padding-left: 10rpx; font-size: 30rpx; color: #999;}
 
 .game_resave{font-size: 28rpx; color: #00a7ff; float: right;}
+.game_resave:hover{font-weight: bold; font-size: 30rpx;}
 .game_resave_dialog{width: 300px; background: #fff; position: fixed; top: 8%; left: calc(50% - 150px); z-index: 10; padding: 30rpx 0 0 0; display: inline-block;-moz-box-shadow: 1px 1px 10px -2px #c1c1c1;-webkit-box-shadow: 1px 1px 10px -2px #c1c1c1;box-shadow: 1px 1px 10px -2px #c1c1c1; border-radius:10rpx; border:1px solid #eee;}
-.game_resave_dialog .resave_input{width:calc(100% - 100rpx); margin-left: 30rpx; background: #f8f8f8; border-radius: 10rpx; padding: 20rpx; font-size: 26rpx; height: 200rpx; line-height: 20rpx;}
+.game_resave_dialog .resave_input{width:calc(100% - 100rpx); margin-left: 30rpx; background: #f8f8f8; border-radius: 10rpx; padding: 20rpx; font-size: 26rpx; height: 200rpx; line-height: 36rpx;}
 .game_resave_dialog p{width: 100%; margin-top: 30rpx;}
 .game_resave_dialog a{width: 50%; float: left; height: 80rpx; font-size: 15px; line-height: 80rpx; text-align: center; display: inline-block; border-top: 1rpx solid #eee;}
