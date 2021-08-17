@@ -42,7 +42,7 @@ export default ({
 			},
 			add_taobaoHotNews() {
 				if(this.proinfo.url == '' || this.proinfo.name == '' || this.proinfo.imgurl == '') {
-					alert('还未输入.')
+					alert('还未输入..')
 					return
 				}
 				console.log('add_taobaoHotNews')
