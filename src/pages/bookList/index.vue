@@ -34,7 +34,7 @@ export default ({
 				switch (urlheader) {
 					case 'weixinbook':
 						header = 'https://weread.qq.com'
-						window.location.href = header + '' + word + ''
+						window.open(header + '' + word + '')
 						break;
 				}
 			}

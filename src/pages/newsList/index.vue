@@ -115,37 +115,37 @@
 					case 'baidu':
 						header = 'https://www.baidu.com/s?wd='
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
-						window.location.href = header + '' + word + ''
+						window.open(header + '' + word + '')
 						break
 					case 'toutiao':
 						header = 'https://so.toutiao.com/search?keyword='
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '%23' + word + '%23') })
-						window.location.href = header + '%23' + word + '%23'
+						window.open(header + '%23' + word + '%23')
 						break
 					case 'weibo':
 						header = 'https://m.weibo.cn/search?containerid=231522type%3D1%26q%3D'
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
-						window.location.href = header + '' + word + ''
+						window.open(header + '' + word + '')
 						break;
 					case 'sogou':
 						header = 'https://www.sogou.com/sogou?query='
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '&ie=utf8&pid=sogou-wsse-721e049e9903c3a7') })
-						window.location.href = header + '' + word + '&ie=utf8&pid=sogou-wsse-721e049e9903c3a7'
+						window.open(header + '' + word + '&ie=utf8&pid=sogou-wsse-721e049e9903c3a7')
 						break;
 					case 'zhihu':
 						header = 'https://www.zhihu.com/search?q='
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '&type=content') })
-						window.location.href = header + '' + word + '&type=content'
+						window.open(header + '' + word + '&type=content')
 						break;
 					case 'bilibili':
 						header = 'https://'
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word.slice(2) + '') })
-						window.location.href = header + '' + word.slice(2) + ''
+						window.open(header + '' + word.slice(2) + '')
 						break;
 					case 'douyin':
 						header = 'https://www.douyin.com/search/'
 						// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(header + '' + word + '') })
-						window.location.href = header + '' + word + ''
+						window.open(header + '' + word + '')
 						break;
 				}
 			},

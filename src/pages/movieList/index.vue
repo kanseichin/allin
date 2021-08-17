@@ -47,11 +47,11 @@ export default ({
 				switch (urlheader) {
 					case 'douban':
 						header = ''
-						window.location.href = header + '' + word + ''
+						window.open(header + '' + word + '')
 						break;
 					case 'yugao':
 						header = 'https://www.yugaopian.cn'
-						window.location.href = header + '' + word + ''
+						window.open(header + '' + word + '')
 						break;
 				}
 			}

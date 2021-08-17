@@ -34,7 +34,7 @@ export default ({
 				switch (urlheader) {
 					case 'taobao':
 						header = ''
-						window.location.href = header + '' + word + ''
+						window.open(header + '' + word + '')
 						break;
 				}
 			}

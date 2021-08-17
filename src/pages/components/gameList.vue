@@ -102,13 +102,13 @@ export default ({
 			gotoDefault(palyUrl) {
 				console.log('gotoDefault', palyUrl)
 				// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(palyUrl) })
-				window.location.href = palyUrl
+				window.open(palyUrl)
 			},
 			resaveGo() {
 				console.log('resaveGo', this.resaveinput)
 				if(this.resaveinput != '') {
 					// wx.navigateTo({ url: '/pages/newsDetail/index?url=' + encodeURIComponent(this.resaveinput) })
-					window.location.href = this.resaveinput
+					window.open(this.resaveinput)
 					this.resaveinput = ''
 					this.is_resaveinput = false
 				}

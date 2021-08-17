@@ -25,7 +25,7 @@ export default ({
 		},
 		methods: {
 			gotoDefault(palyUrl) {
-				window.location.href = palyUrl
+				window.open(palyUrl)
 			}
 		},
 		onLoad() {
