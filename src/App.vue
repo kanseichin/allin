@@ -14,4 +14,5 @@
 
 <style>
 @import './style/common_h5.css';
+@import './style/index.css';
 </style>
