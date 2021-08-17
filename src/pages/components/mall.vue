@@ -16,7 +16,7 @@ export default ({
 		data() {
 			return {
 				newslist: [{
-					url: 'ico_weixinbook.png',
+					url: 'ico_taobao.png',
 					name: '淘宝',
 					tabnum: 1
 				}]
@@ -26,6 +26,10 @@ export default ({
 			gotoNews(tabnum, name) {
 				wx.navigateTo({ url: '/pages/mallList/index?tabnum=' + tabnum + '&name=' + name })
 				console.log('gotoNews_mall', tabnum, name)
+			},
+			gotoMallAdmin() {
+				console.log('gotoMallAdmin')
+				wx.navigateTo({ url: '/pages/mallAdmin/index' })
 			}
 		},
 		onLoad() {

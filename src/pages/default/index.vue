@@ -10,6 +10,7 @@
 		<cctv-list ref="CctvList"></cctv-list>
 		<movie ref="Movie"></movie>
 		<book ref="Book"></book>
+		<mall ref="Mall"></mall>
 		<game-list ref="GameList"></game-list>
 	</view>
 </template>
@@ -21,14 +22,16 @@
 	import GameList from '../components/gameList.vue'
 	import Movie from '../components/movie.vue'
 	import Book from '../components/book.vue'
+	import Mall from '../components/mall.vue';
 
 	export default Vue.extend({
   		components: {
-				GameList,
-				Movie,
-				CctvList,
-				Book
-			},
+			GameList,
+			Movie,
+			CctvList,
+			Book,
+			Mall
+		},
 		data() {
 			return {
 				newslist: [{
