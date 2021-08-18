@@ -47,6 +47,18 @@
 			"style": {
 				"navigationBarTitleText": "搜呱-淘宝管理"
 			}
+		},
+		{
+			"path": "pages/yunbookTops/index",
+			"style": {
+				"navigationBarTitleText": "搜呱"
+			}
+		},
+		{
+			"path": "pages/yunbookList/index",
+			"style": {
+				"navigationBarTitleText": "搜呱"
+			}
 		}
 	],
 	"globalStyle": {

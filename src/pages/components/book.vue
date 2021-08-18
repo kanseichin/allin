@@ -20,16 +20,28 @@ export default ({
 					name: '微信读书',
 					tabnum: 1,
 					link: ''
+				}, {
+					url: 'ico_yunbook.png',
+					name: '笔趣阁',
+					tabnum: 2,
+					link: ''
 				}]
 			}
 		},
 		methods: {
 			gotoNews(tabnum, name, link) {
-				if(link != null && link.length > 0) {
-					window.location.href = link
-				} else {
-					wx.navigateTo({ url: '/pages/bookList/index?tabnum=' + tabnum + '&name=' + name })
-					console.log('gotoNews_book', tabnum, name)
+				switch(tabnum) {
+					case 1:
+						if(link != null && link.length > 0) {
+							window.location.href = link
+						} else {
+							wx.navigateTo({ url: '/pages/bookList/index?tabnum=' + tabnum + '&name=' + name })
+							console.log('gotoNews_book', tabnum, name)
+						}
+						break
+					case 2:
+						wx.navigateTo({ url: '/pages/yunbookTops/index?tabnum=' + tabnum + '&name=' + name })
+						break
 				}
 			}
 		},
