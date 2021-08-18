@@ -334,10 +334,11 @@ textarea::-ms-input-placeholder {color: #eee;}
 .no1_tab .tab_sel{color: #ff4400; border-bottom: 4rpx solid #ff4400; font-weight: bold; padding-bottom: 6rpx;}
 .no1_content{width: 100%; background: #fff; padding: 30rpx; display: inline-block; margin-top: 20rpx; margin-top: 90rpx;}
 .no1_content ul{width:100%; line-height: 0;}
-.no1_content ul li{width:calc(100% - 30px); min-height: 80rpx; line-height: 80rpx; color: #333; font-size: 30rpx; position: relative; display: inline-flex; cursor: pointer;}
+.no1_content ul li{width:calc(100% - 30px); min-height: 80rpx; line-height: 80rpx; color: #333; font-size: 30rpx; position: relative; display: inline-flex;}
 .no1_content ul li .topnum{width: 70rpx; display: inline-block; color: #ff4400; font-style: italic; vertical-align: top;}
 .no1_content ul li a{position: absolute; right: 0; top: 24rpx;}
 .no1_content ul li span{width: calc(100% - 150rpx); display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.no1_content ul li span:hover{color: #2440b3; cursor: pointer;}
 .shadow_for{-moz-box-shadow: 0 0px 10px 5px #ccc;-webkit-box-shadow: 0 0px 10px 5px #ccc;box-shadow: 0 0px 10px 5px #ccc;}
 .shadow_for1{-moz-box-shadow: 0 0px 10px -1px #ccc;-webkit-box-shadow: 0 0px 10px -1px #ccc;box-shadow: 0 0px 10px -1px #ccc;}
 .c-text{display: inline-block;padding: 0 2px;text-align: center;vertical-align: middle;font-style: normal;color: #fff;overflow: hidden;line-height: 16px;height: 16px;font-size: 12px;border-radius: 4px;font-weight: 200;}
@@ -351,7 +352,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 
 .news_cao{background: #fff; width: 100%; margin-top: 20rpx; display: inline-block;}
 .news_cao li{width: 33.33%; float: left; text-align: center; margin: 20rpx 0; padding: 20rpx 0;}
-.news_cao li:hover{-moz-box-shadow: 0 0px 10px -1px #ccc;-webkit-box-shadow: 0 0px 10px -1px #ccc;box-shadow: 0 0px 10px -1px #ccc; cursor: pointer;}
+.news_cao li:hover{-moz-box-shadow: 0 0px 10px -1px #ccc;-webkit-box-shadow: 0 0px 10px -1px #ccc;box-shadow: 0 0px 10px -1px #ccc; cursor: pointer;transition: 0.2s;-moz-transition: 0.2s;-webkit-transition: 0.2s;-o-transition: 0.2s;}
 .news_cao li p{width: 100%; font-size: 28rpx; min-height: 60rpx; line-height: 60rpx;}
 .news_cao li .ico1{display: inline-block; width: 100rpx; height: 100rpx; border-radius: 4rpx;}
 .tools_p{width: calc(100% - 8px); border-left: 3px solid #ffa622; height: 29rpx; line-height: 29rpx; padding-left: 10rpx; font-size: 30rpx; color: #999;}
