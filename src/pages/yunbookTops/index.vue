@@ -1,8 +1,18 @@
 <template>
     <view class="content_team">
-		<div class="no1_content" style="margin-top:0; padding-top:0;">
+		<div class="no1_yunbook">
 			<ul v-if="tab_num===2&&yunbook_List && yunbook_List.length > 1">
-				<li v-for="(list,index) in yunbook_List" :key="index" @click="gotoDetail(list, 'biqugekey')"><label class="topnum">{{index+1}}</label><span>{{list}}</span></li>
+				<li v-for="(list,index) in yunbook_List" :key="index" @click="gotoDetail(list, 'biqugekey')">
+					<div class="b_title">{{list}}</div>
+					<div class="b_div">
+						<img src="https://www.quge7.com/bookimg/3563.jpg" />
+						<div>
+							<p class="b_text">榜一书本</p>
+							<p class="b_text">榜二书本</p>
+							<p class="b_text">榜三书本</p>
+						</div>
+					</div>
+				</li>
 			</ul>
 		</div>
     </view>

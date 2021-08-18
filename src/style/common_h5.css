@@ -371,3 +371,13 @@ textarea::-ms-input-placeholder {color: #eee;}
 .mall_div .a_submit{background: #00a7ff; cursor: pointer; border-radius: 18rpx; color: #fff; font-size: 30rpx; display: inline-block; text-align: center; padding: 0 30rpx; min-width: 200rpx; height: 100rpx; line-height: 100rpx;}
 .mall_div .a_cancel{background: #eee; cursor: pointer; border-radius: 18rpx; color: #666; font-size: 30rpx; display: inline-block; text-align: center; padding: 0 30rpx; min-width: 200rpx; height: 100rpx; line-height: 100rpx;}
 .mall_addbtn{background: #ffa622; color: #fff; font-size: 15px; text-align: center; width: 60px; height: 60px; line-height: 60px; border-radius: 60px; display: inline-block; cursor: pointer; position: fixed; z-index: 1; bottom: 15px; right: 15px;-moz-box-shadow: 2px 2px 5px #c1c1c1;-webkit-box-shadow: 2px 2px 5px #c1c1c1;box-shadow: 2px 2px 5px #c1c1c1;}
+
+.no1_yunbook{width:100%; background: #fff; display: inline-block; margin-top: 15px;}
+.no1_yunbook ul{width: calc(100% - 15px); line-height: 0; padding-left: 15px; display: inline-block;}
+.no1_yunbook ul li{width: calc(50% - 35px); margin: 0 15px 15px 0; padding: 5px 10px; float:left; min-height: 100rpx; line-height: 50rpx; color: #333; font-size: 30rpx; position: relative;-moz-box-shadow: 0 0 10px -2px #c1c1c1;-webkit-box-shadow: 0 0 10px -2px #c1c1c1;box-shadow: 0 0 10px -2px #c1c1c1; border-radius:10rpx;}
+.no1_yunbook ul li:hover{-moz-box-shadow: 1px 1px 10px -2px #c1c1c1;-webkit-box-shadow: 1px 1px 10px -2px #c1c1c1;box-shadow: 1px 1px 10px -2px #c1c1c1; border-radius:10rpx;}
+.no1_yunbook ul li .b_title{font-size: 15px; font-weight: bold; display: inline-block; width: 100%;}
+.no1_yunbook ul li .b_div{width: 100%; display: inline-block; margin-top: 5px;}
+.no1_yunbook ul li .b_div img{float: left; width: 50px; height: 62px; display: inline-block; border-radius: 3px;}
+.no1_yunbook ul li .b_div div{float: left; width: calc(100% - 70px); padding: 0 10px;}
+.no1_yunbook ul li .b_div div .b_text{font-size: 13px;}
