@@ -1,5 +1,6 @@
 <template>
     <view class="content_team">
+		<div class="search_div"><input type="text" placeholder="输入关键字" class="search_input" maxlength="30" :focus="searchfocus" v-model="searchword" @keydown.enter.native="gotoSearch" /><a class="search_clear" @click="searchClear"></a></div>
 		<div class="no1_yunbook">
 			<ul v-if="tab_num===2&&yunbook_List && yunbook_List.length > 1">
 				<li v-for="(list,index) in yunbook_List" :key="index" @click="gotoDetail(list, 'biqugekey')">
@@ -25,12 +26,13 @@ export default ({
 		data() {
 			return {
 				tab_num: '',
-				yunbook_List: []
+				yunbook_List: [],
+				searchword: '',
+				searchfocus: false
 			}
 		},
 		methods: {
 			get_yunbookHotNews() {
-				console.log('get_yunbookHotNews')
 				ApiClient.Post('/HSBaseWeb/book/biqugekey', {
 			}).then(e => {
 					this.tab_num = 2
@@ -39,7 +41,6 @@ export default ({
 				.catch(e => { })
 			},
 			gotoDetail(word, urlheader) {
-				console.log('gotoDetail_book', word)
 				var header = ''
 				switch (urlheader) {
 					case 'biqugekey':
@@ -47,6 +48,19 @@ export default ({
 						wx.navigateTo({ url: '/pages/yunbookList/index?tabnum=' + this.tab_num + '&name=' + word })
 						break;
 				}
+			},
+			gotoSearch() {
+				console.log('gotoSearch')
+				if(this.searchword) {
+					console.log('gotoSearch1')
+					var header = ''
+					header = 'https://www.quge7.com/s?q='
+					window.open(header + '' + this.searchword + '')
+				}
+			},
+			searchClear() {
+				this.searchword = ''
+				this.searchfocus = true
 			}
 		},
 		onLoad(options) {

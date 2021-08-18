@@ -286,12 +286,6 @@ input.info2a{width:100%; color:#666;border:none;border-bottom:1rpx solid #e8e8e8
 .black_overlay1{position:fixed; top:0; left:0; z-index:1009; width:100%; height:100%; background:#000; filter:alpha(opacity=20); opacity:0.2;}
 
 /*暂无数据*/
-.sourceEmpty{background:#fff url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/no_2.png) center center no-repeat; width:100%; height:100px; background-size:100px; text-align:center; font-size:0.9em; color:#999; position:absolute; top:30%; padding:100px 70px 0 70px;}
-.sourceEmpty1{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/no_2.png) center center no-repeat; width:100%; height:150px; background-size:80px; text-align:center; font-size:0.9em; color:#999; padding:110px 0 0 0; margin-top:120px;}
-.sourceEmpty3{background:#fff url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/no_3.png) center top 50px no-repeat; width:100%; background-size:100px; text-align:center; font-size:0.9em; color:#999; overflow: hidden; padding:130px 20px 20px 20px;}
-.sourceEmpty4{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/no_2.png) center center no-repeat; width:100%; height:150px; background-size:80px; text-align:center; font-size:0.9em; color:#999; padding:110px 0 0 0; position: relative;top: 30%;}
-.sourceEmpty4a{background: #fff url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/no_2.png) center center no-repeat; width:100%; height:200px; background-size:80px; text-align:center; font-size:0.9em; color:#999; padding:110px 0 0 0; position: relative;top: 30%;}
-.sourceEmpty_noshop{background: url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/no_3.png) center center no-repeat; width:100%; height:150px; background-size:80px; text-align:center; font-size:0.9em; color:#999; padding:120px 0 20px 0; margin:50px 0 0 0;}
 .sourceEmpty_text{width:100%; height:50px; line-height:50px; text-align:center; font-size:24rpx; color:#999;}
 
 /*微登录，去除链接点击底色闪烁：-webkit-tap-highlight-color:rgba(0,0,0,0);*/
@@ -307,10 +301,6 @@ input.info2a{width:100%; color:#666;border:none;border-bottom:1rpx solid #e8e8e8
 @media (max-width: 480px) {
     .orderTop.orderTopSpec {padding-bottom:0px !important;padding-top:10px !important;}
 }
-
-.a21{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/a21.png) center center no-repeat; width:70px; height:70px; display:inline-block; background-size:70px; border-radius:70px; border:none;}
-.a22{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/a22.png) center center no-repeat; width:70px; height:70px; display:inline-block; background-size:70px; border-radius:70px; border:none;}
-.a23{background:url(http://b.ququ.im:6612/StaticFilesFolder/temp_content//MP/a23.png) center center no-repeat; width:70px; height:70px; display:inline-block; background-size:70px; border-radius:70px; border:none;}
 
 .shopname{height:40px; line-height:40px; padding-left:10px; display:inline-block; background-size:18px; font-size:14px; width:100%; position:relative;}
 
@@ -372,7 +362,7 @@ textarea::-ms-input-placeholder {color: #eee;}
 .mall_div .a_cancel{background: #eee; cursor: pointer; border-radius: 18rpx; color: #666; font-size: 30rpx; display: inline-block; text-align: center; padding: 0 30rpx; min-width: 200rpx; height: 100rpx; line-height: 100rpx;}
 .mall_addbtn{background: #ffa622; color: #fff; font-size: 15px; text-align: center; width: 60px; height: 60px; line-height: 60px; border-radius: 60px; display: inline-block; cursor: pointer; position: fixed; z-index: 1; bottom: 15px; right: 15px;-moz-box-shadow: 2px 2px 5px #c1c1c1;-webkit-box-shadow: 2px 2px 5px #c1c1c1;box-shadow: 2px 2px 5px #c1c1c1;}
 
-.no1_yunbook{width:100%; background: #fff; display: inline-block; margin-top: 15px;}
+.no1_yunbook{width:100%; background: #fff; display: inline-block;}
 .no1_yunbook ul{width: calc(100% - 15px); line-height: 0; padding-left: 15px; display: inline-block;}
 .no1_yunbook ul li{width: calc(50% - 35px); margin: 0 15px 15px 0; padding: 5px 10px; float:left; min-height: 100rpx; line-height: 50rpx; color: #333; font-size: 30rpx; position: relative;-moz-box-shadow: 0 0 10px -2px #c1c1c1;-webkit-box-shadow: 0 0 10px -2px #c1c1c1;box-shadow: 0 0 10px -2px #c1c1c1; border-radius:10rpx;}
 .no1_yunbook ul li:hover{-moz-box-shadow: 1px 1px 10px -2px #c1c1c1;-webkit-box-shadow: 1px 1px 10px -2px #c1c1c1;box-shadow: 1px 1px 10px -2px #c1c1c1; border-radius:10rpx;}
@@ -381,3 +371,6 @@ textarea::-ms-input-placeholder {color: #eee;}
 .no1_yunbook ul li .b_div img{float: left; width: 50px; height: 62px; display: inline-block; border-radius: 3px;}
 .no1_yunbook ul li .b_div div{float: left; width: calc(100% - 70px); padding: 0 10px;}
 .no1_yunbook ul li .b_div div .b_text{font-size: 13px;}
+.search_div{width: calc(100% - 30px); padding: 15px; display: inline-block; position: relative;}
+.search_div .search_input{width: calc(100% - 55px); padding: 0 15px 0 40px; display: inline-block; background: #f5f5f5 url(./static/ico1.png) left 15px center no-repeat; background-size: 20px; font-size: 14px; height: 45px; line-height: 45px; border-radius: 45px;}
+.search_div .search_clear{background: url(./static/ico_clear.png) center center no-repeat; width: 45px; height: 45px; background-size: 20px; display: inline-block; position:absolute; right: 15px;}
