@@ -370,7 +370,8 @@ textarea::-ms-input-placeholder {color: #eee;}
 .no1_yunbook ul li .b_div{width: 100%; display: inline-block; margin-top: 5px;}
 /* .no1_yunbook ul li .b_div img{float: left; width: 50px; height: 62px; display: inline-block; border-radius: 3px;} */
 .no1_yunbook ul li .b_div img{float: left; width: 60px; height: 60px; display: inline-block; border-radius: 3px;}
-.no1_yunbook ul li .b_div div{float: left; width: calc(100% - 80px); padding: 0 10px;}
+.no1_yunbook ul li .b_div .ico_book{background: url(./static/ico_book.png) center center no-repeat; background-size: 40px; float: left; width: 60px; height: 60px; display: inline-block; border-radius: 3px;}
+.no1_yunbook ul li .b_div div{float: left; width: calc(100% - 80px); padding: 0 10px; margin-top: 5px;}
 .no1_yunbook ul li .b_div div .b_text{font-size: 14px;}
 .search_div{width: calc(100% - 30px); padding: 15px; display: inline-block; position: relative;}
 .search_div .search_input{width: calc(100% - 55px); padding: 0 15px 0 40px; display: inline-block; background: #f5f5f5 url(./static/ico1.png) left 15px center no-repeat; background-size: 20px; font-size: 14px; height: 45px; line-height: 45px; border-radius: 45px;}

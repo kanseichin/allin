@@ -16,7 +16,8 @@
 				</li> -->
 				<li v-for="(list,index) in yunbook_List" :key="index" @click="gotoDetail(list, 'biqugekey')">
 					<div class="b_div">
-						<img :src="'./static/fruits/'+'f_'+(index+1)+'.png'" />
+						<!-- <img :src="'./static/fruits/'+'f_'+(index+1)+'.png'" /> -->
+						<span class="ico_book"></span>
 						<div>
 							<p class="b_text">{{list}}</p>
 						</div>
