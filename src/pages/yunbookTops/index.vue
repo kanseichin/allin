@@ -25,13 +25,18 @@
 				</li>
 			</ul>
 		</div>
+		<home ref="Home" :showhome="true"></home>
     </view>
 </template>
 
 <script>
 import Vue from 'vue'
 import ApiClient from '../../utils/apiclient'
+import Home from '../components/home.vue'
 export default ({
+		components: {
+			Home
+		},
 		data() {
 			return {
 				tab_num: '',

@@ -23,13 +23,18 @@
 				<li v-for="(list,index) in douyin_hotNewsList" :key="index" @click="gotoDetail(list.word, 'douyin')"><label class="topnum">{{index+1}}</label><span>{{list.word}}</span><a class="c-text c-text-hot" v-if="index<3">热</a></li>
 			</ul>
 		</div>
+		<home ref="Home" :showhome="true"></home>
 	</view>
 </template>
 
 <script>
 	import Vue from 'vue'
 	import ApiClient from '../../utils/apiclient'
+	import Home from '../components/home.vue'
 	export default Vue.extend({
+		components: {
+			Home
+		},
 		data() {
 			return {
 				tab_num: '',
