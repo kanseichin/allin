@@ -3,7 +3,7 @@
 		<div class="search_div"><input type="text" placeholder="输入关键字" class="search_input" maxlength="30" :focus="searchfocus" v-model="searchword" @keydown.enter.native="gotoSearch" /><a class="search_clear" @click="searchClear"></a></div>
 		<div class="no1_yunbook">
 			<ul v-if="tab_num===2&&yunbook_List && yunbook_List.length > 1">
-				<li v-for="(list,index) in yunbook_List" :key="index" @click="gotoDetail(list, 'biqugekey')">
+				<!-- <li v-for="(list,index) in yunbook_List" :key="index" @click="gotoDetail(list, 'biqugekey')">
 					<div class="b_title">{{list}}</div>
 					<div class="b_div">
 						<img src="https://www.quge7.com/bookimg/3563.jpg" />
@@ -11,6 +11,14 @@
 							<p class="b_text">榜一书本</p>
 							<p class="b_text">榜二书本</p>
 							<p class="b_text">榜三书本</p>
+						</div>
+					</div>
+				</li> -->
+				<li v-for="(list,index) in yunbook_List" :key="index" @click="gotoDetail(list, 'biqugekey')">
+					<div class="b_div">
+						<img :src="'./static/fruits/'+'f_'+(index+1)+'.png'" />
+						<div>
+							<p class="b_text">{{list}}</p>
 						</div>
 					</div>
 				</li>
